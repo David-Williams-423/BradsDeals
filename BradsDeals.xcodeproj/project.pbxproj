@@ -11,6 +11,8 @@
 		38FF09762B51EE7A00689A3C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FF09752B51EE7A00689A3C /* ContentView.swift */; };
 		38FF09782B51EE7B00689A3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38FF09772B51EE7B00689A3C /* Assets.xcassets */; };
 		38FF097B2B51EE7B00689A3C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38FF097A2B51EE7B00689A3C /* Preview Assets.xcassets */; };
+		38FF09832B51EF1000689A3C /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FF09822B51EF1000689A3C /* APIService.swift */; };
+		38FF09872B51EF3F00689A3C /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FF09862B51EF3F00689A3C /* Deal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,9 @@
 		38FF09752B51EE7A00689A3C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		38FF09772B51EE7B00689A3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38FF097A2B51EE7B00689A3C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		38FF09822B51EF1000689A3C /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		38FF09862B51EF3F00689A3C /* Deal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
+		38FF09882B51F5F900689A3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +56,11 @@
 		38FF09722B51EE7A00689A3C /* BradsDeals */ = {
 			isa = PBXGroup;
 			children = (
+				38FF09882B51F5F900689A3C /* Info.plist */,
 				38FF09732B51EE7A00689A3C /* BradsDealsApp.swift */,
 				38FF09752B51EE7A00689A3C /* ContentView.swift */,
+				38FF09812B51EEF400689A3C /* Services */,
+				38FF09852B51EF2600689A3C /* Models */,
 				38FF09772B51EE7B00689A3C /* Assets.xcassets */,
 				38FF09792B51EE7B00689A3C /* Preview Content */,
 			);
@@ -65,6 +73,22 @@
 				38FF097A2B51EE7B00689A3C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		38FF09812B51EEF400689A3C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				38FF09822B51EF1000689A3C /* APIService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		38FF09852B51EF2600689A3C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				38FF09862B51EF3F00689A3C /* Deal.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +162,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				38FF09762B51EE7A00689A3C /* ContentView.swift in Sources */,
+				38FF09832B51EF1000689A3C /* APIService.swift in Sources */,
 				38FF09742B51EE7A00689A3C /* BradsDealsApp.swift in Sources */,
+				38FF09872B51EF3F00689A3C /* Deal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +301,7 @@
 				DEVELOPMENT_TEAM = CS7P9L74D4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BradsDeals/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,6 +331,7 @@
 				DEVELOPMENT_TEAM = CS7P9L74D4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BradsDeals/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
