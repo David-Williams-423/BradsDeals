@@ -10,9 +10,16 @@ import SwiftUI
 struct DealsView: View {
     @State var deals: [Deal]
     var body: some View {
-        ForEach(deals, id: \.id) { deal in
-            DealRowView(deal: deal)
+        LazyVStack {
+            ForEach(deals, id: \.id) { deal in
+                NavigationLink(destination: DetailView(deal: deal), label: {
+                    DealRowView(deal: deal)
+
+                })
+                .buttonStyle(.plain)
+            }
         }
+        
     }
 }
 

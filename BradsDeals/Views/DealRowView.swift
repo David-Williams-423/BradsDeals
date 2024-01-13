@@ -12,15 +12,13 @@ struct DealRowView: View {
 
     var body: some View {
         HStack(alignment: .top) {
-            if let imageUrl = URL(string: deal.image) {
-                AsyncImage(url: imageUrl) { image in
-                    image.resizable()
-                } placeholder: {
-                    ProgressView()
-                }
-                .frame(width: 80, height: 80)
-                .cornerRadius(10)
+            AsyncImage(url: URL(string: deal.image)) { image in
+                image.resizable()
+            } placeholder: {
+                ProgressView()
             }
+            .frame(width: 80, height: 80)
+            .cornerRadius(10)
 
             VStack(alignment: .leading) {
                 Text(deal.headline)

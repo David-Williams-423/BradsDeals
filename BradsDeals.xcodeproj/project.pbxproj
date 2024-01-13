@@ -17,6 +17,7 @@
 		38FF09902B52001000689A3C /* DealRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FF098F2B52001000689A3C /* DealRowView.swift */; };
 		38FF09922B52054600689A3C /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FF09912B52054600689A3C /* Utils.swift */; };
 		38FF09942B52080900689A3C /* DealsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FF09932B52080900689A3C /* DealsView.swift */; };
+		38FF09962B522C0A00689A3C /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FF09952B522C0A00689A3C /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		38FF098F2B52001000689A3C /* DealRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealRowView.swift; sourceTree = "<group>"; };
 		38FF09912B52054600689A3C /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		38FF09932B52080900689A3C /* DealsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsView.swift; sourceTree = "<group>"; };
+		38FF09952B522C0A00689A3C /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				38FF09752B51EE7A00689A3C /* ContentView.swift */,
 				38FF09932B52080900689A3C /* DealsView.swift */,
 				38FF098F2B52001000689A3C /* DealRowView.swift */,
+				38FF09952B522C0A00689A3C /* DetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38FF098B2B51F93600689A3C /* DealsViewModel.swift in Sources */,
+				38FF09962B522C0A00689A3C /* DetailView.swift in Sources */,
 				38FF09762B51EE7A00689A3C /* ContentView.swift in Sources */,
 				38FF09832B51EF1000689A3C /* APIService.swift in Sources */,
 				38FF09742B51EE7A00689A3C /* BradsDealsApp.swift in Sources */,
