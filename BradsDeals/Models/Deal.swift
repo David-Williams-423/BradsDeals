@@ -3,12 +3,14 @@
 import Foundation
 
 // MARK: - Response
-struct Response: Codable {
+
+struct Deals: Codable {
     let deals: [Deal]
     let count: Int
 }
 
 // MARK: - Deal
+
 struct Deal: Codable {
     let alternateHeadline, alternateImageUrls: String?
     let bradsDealsExclusive: Bool
@@ -83,11 +85,13 @@ struct Deal: Codable {
 }
 
 // MARK: - Category
+
 struct Category: Codable {
     let uri, name, slug: String
 }
 
 // MARK: - Flag
+
 struct Flag: Codable {
     let name: String
     let slug: Slug
@@ -97,7 +101,7 @@ struct Flag: Codable {
 enum Slug: String, Codable {
     case allStarDealAssignedOnly = "all-star-deal-assigned-only"
     case appleCollection = "apple-collection"
-    case axis = "axis"
+    case axis
     case dealOfTheDayAssignedOnly = "deal-of-the-day-assigned-only"
     case dealsUnder15 = "deals-under-15"
     case dealsUnder25 = "deals-under-25"
@@ -111,22 +115,23 @@ enum Slug: String, Codable {
     case householdEssentials = "household-essentials"
     case lastMinuteGiftsMustBeDeliveredInTimeForXmas = "last-minute-gifts-must-be-delivered-in-time-for-xmas"
     case patioFurniture = "patio-furniture"
-    case perch = "perch"
+    case perch
     case primeFreeShipping = "prime-free-shipping"
     case proofreadByZach = "proofread-by-zach"
     case stockingStuffers = "stocking-stuffers"
-    case thrasio = "thrasio"
+    case thrasio
     case todaysTrendingGifts = "todays-trending-gifts"
     case valentinesDayFeedPage = "valentines-day-feed-page"
 }
 
 enum Gender: String, Codable {
-    case f = "f"
-    case m = "m"
-    case n = "n"
+    case f
+    case m
+    case n
 }
 
 // MARK: - ImageUrls
+
 struct ImageUrls: Codable {
     let the88X88, the160X160, the310X310, original: String
 
@@ -139,6 +144,7 @@ struct ImageUrls: Codable {
 }
 
 // MARK: - MerchandiseType
+
 struct MerchandiseType: Codable {
     let id: Int
     let parentID: Int?
@@ -153,6 +159,7 @@ struct MerchandiseType: Codable {
 }
 
 // MARK: - Merchant
+
 struct Merchant: Codable {
     let couponCount: Int
     let couponTypeCounts: CouponTypeCounts
@@ -179,6 +186,7 @@ struct Merchant: Codable {
 }
 
 // MARK: - CouponTypeCounts
+
 struct CouponTypeCounts: Codable {
     let online, onlineWithCodes, other, printable: Int
     let promotion: Int
@@ -191,6 +199,7 @@ struct CouponTypeCounts: Codable {
 }
 
 // MARK: - MerchantLogoUrls
+
 struct MerchantLogoUrls: Codable {
     let the100X32, the125X40, the250X80, original: String
 
@@ -203,6 +212,7 @@ struct MerchantLogoUrls: Codable {
 }
 
 // MARK: - MerchantRules
+
 struct MerchantRules: Codable {
     let disableSocialSharing, disableMobileView, hideExpirationDate: Bool
     let couponName: CouponName
@@ -229,11 +239,12 @@ enum AlternateDisclaimer: String, Codable {
 }
 
 enum CouponName: String, Codable {
-    case coupon = "coupon"
-    case promotion = "promotion"
+    case coupon
+    case promotion
 }
 
 // MARK: - PaymentType
+
 struct PaymentType: Codable {
     let name: Name
     let logoUrls: PaymentTypeLogoUrls
@@ -245,6 +256,7 @@ struct PaymentType: Codable {
 }
 
 // MARK: - PaymentTypeLogoUrls
+
 struct PaymentTypeLogoUrls: Codable {
     let the128X128, the256X256, the512X512, original: String
 
@@ -264,4 +276,67 @@ enum Name: String, Codable {
 enum ThirdPartyPixel: String, Codable {
     case empty = ""
     case thirdPartyPixel = " "
+}
+
+extension Deal {
+    static let sampleDeal = Deal(
+        alternateHeadline: "Special Offer on Electronics",
+        alternateImageUrls: nil,
+        bradsDealsExclusive: true,
+        brands: ["TechBrand", "GadgetCo"],
+        categories: [Category(uri: "/electronics", name: "Electronics", slug: "electronics")],
+        coupons: ["DISCOUNT20"],
+        couponCode: "SAVE20",
+        description: """
+        Check out the latest deals on <a href='https://www.example.com/electronics'>electronics</a>!
+        Don't miss the special discount on <a href='https://www.example.com/gadgets'>gadgets</a>.
+        """,
+        descriptionPreview: "Latest Electronics Deals",
+        details: "Up to 50% off on selected electronic items.",
+        editor: "John Doe",
+        editorBdUserID: "12345",
+        excludeFromPds: false,
+        expiresAt: "2024-12-31",
+        flags: [Flag(name: "Top Deal", slug: .dealOfTheDayAssignedOnly, id: 101)],
+        gender: .n,
+        generalSale: true,
+        goLink: "https://www.example.com/deals",
+        headline: "Massive Electronics Sale",
+        id: 123,
+        postUid: "post-123",
+        image: "https://cdn-images.bradsdeals.com/prod/510266/deal_160x160/24818597_fpx.jpeg",
+        imageUrls: ImageUrls(the88X88: "https://www.example.com/small.jpg", the160X160: "https://www.example.com/medium.jpg", the310X310: "https://www.example.com/large.jpg", original: "https://www.example.com/original.jpg"),
+        instructions: "Use code SAVE20 at checkout.",
+        likeCount: 150,
+        marketingDescription: "Best electronics in one place.",
+        marketingHeadline: "Electronics Sale",
+        marketingImageUrls: nil,
+        merchandiseType: MerchandiseType(id: 200, parentID: 100, fullName: "Electronic Devices", name: "Electronics", slug: "electronics"),
+        merchant: Merchant(
+            couponCount: 5,
+            couponTypeCounts: CouponTypeCounts(online: 3, onlineWithCodes: 2, other: 0, printable: 0, promotion: 1),
+            dealCount: 50,
+            id: 500,
+            logo: "https://www.example.com/logo.png",
+            logoUrls: MerchantLogoUrls(the100X32: "https://www.example.com/logo_small.png", the125X40: "https://www.example.com/logo_medium.png", the250X80: "https://www.example.com/logo_large.png", original: "https://www.example.com/logo.png"),
+            merchantRules: MerchantRules(disableSocialSharing: false, disableMobileView: false, hideExpirationDate: false, couponName: .coupon, advertisingDisclosure: true, dealGoLinkText: "Shop Now", seoValidation: true, alternateDisclaimer: nil),
+            name: "Example Merchant",
+            paymentTypes: [PaymentType(name: .applePay, logoUrls: PaymentTypeLogoUrls(the128X128: "https://www.example.com/apple_pay.png", the256X256: "https://www.example.com/apple_pay_large.png", the512X512: "https://www.example.com/apple_pay_extra_large.png", original: "https://www.example.com/apple_pay.png"))],
+            siteURL: "https://www.example.com",
+            slug: "example-merchant",
+            uri: "/merchant/example"
+        ),
+        msrp: "$299",
+        price: "$199",
+        primaryCategory: Category(uri: "/electronics", name: "Electronics", slug: "electronics"),
+        quote: "Best electronics sale of the year!",
+        ranking: "Top 5",
+        relatedDealsURI: "/related-deals/electronics",
+        shippedPrice: "$199",
+        shippingCost: "Free Shipping",
+        startsAt: "2024-01-01",
+        teaserHeadline: "Up to 50% Off on Electronics!",
+        thirdPartyPixel: .empty,
+        uri: "/deals/electronics-sale"
+    )
 }

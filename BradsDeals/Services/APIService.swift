@@ -15,7 +15,7 @@ class APIService {
 
     private init() {}
 
-    func fetchDeals() async throws -> Response {
+    func fetchDeals() async throws -> Deals {
         guard let url = URL(string: urlString) else {
             throw URLError(.badURL)
         }
@@ -26,7 +26,7 @@ class APIService {
             throw URLError(.badServerResponse)
         }
 
-        let dealsResponse = try decoder.decode(Response.self, from: data)
+        let dealsResponse = try decoder.decode(Deals.self, from: data)
         return dealsResponse
     }
 }
