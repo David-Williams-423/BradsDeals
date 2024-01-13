@@ -13,8 +13,11 @@ enum DataState {
     case failure(Error)
 }
 
+@MainActor
 class DealsViewModel: ObservableObject {
     @Published var state: DataState = .loading
+    @Published var filterOptions: Set<Gender> = []
+    private var allDeals: [Deal] = []
 
     init() {
         loadDeals()
@@ -25,16 +28,23 @@ class DealsViewModel: ObservableObject {
         Task {
             do {
                 let response = try await APIService.shared.fetchDeals()
-                DispatchQueue.main.async {
-                    self.state = .success(response.deals)
-                }
+                self.allDeals = response.deals
+                self.applyGenderFilter() 
+
             } catch {
-                DispatchQueue.main.async {
-                    self.state = .failure(error)
-                }
+                self.state = .failure(error)
             }
         }
     }
-    
-    
+
+    func applyGenderFilter() {
+        if filterOptions.isEmpty {
+            state = .success(allDeals) // Show all deals if no filter is applied
+        } else {
+            let filteredDeals = allDeals.filter { deal in
+                filterOptions.contains(deal.gender)
+            }
+            state = .success(filteredDeals)
+        }
+    }
 }

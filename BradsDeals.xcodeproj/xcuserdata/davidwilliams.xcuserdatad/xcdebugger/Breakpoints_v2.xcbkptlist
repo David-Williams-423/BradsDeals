@@ -18,6 +18,38 @@
             endingLineNumber = "29"
             landmarkName = "fetchDeals()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D34F22AB-1542-4F68-A901-0A4B83A84930 - 8a8887bcb593d487"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for BradsDeals.APIService.fetchDeals() async throws -&gt; BradsDeals.Response"
+                  moduleName = "BradsDeals"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidwilliams/Desktop/Personal/Coding%20Projects/iOS%20Development/BradsDeals/BradsDeals/Services/APIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "436">
+               </Location>
+               <Location
+                  uuid = "D34F22AB-1542-4F68-A901-0A4B83A84930 - 57cd538796538cbf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for BradsDeals.APIService.fetchDeals() async throws -&gt; BradsDeals.Deals"
+                  moduleName = "BradsDeals"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidwilliams/Desktop/Personal/Coding%20Projects/iOS%20Development/BradsDeals/BradsDeals/Services/APIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "436">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

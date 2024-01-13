@@ -124,10 +124,21 @@ enum Slug: String, Codable {
     case valentinesDayFeedPage = "valentines-day-feed-page"
 }
 
-enum Gender: String, Codable {
+enum Gender: String, Codable, CaseIterable {
     case f
     case m
     case n
+
+    func stringRepresentation() -> String {
+        switch self {
+        case .f:
+            return "Women's"
+        case .m:
+            return "Men's"
+        case .n:
+            return "Neutral"
+        }
+    }
 }
 
 // MARK: - ImageUrls

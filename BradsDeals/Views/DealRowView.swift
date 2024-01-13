@@ -18,7 +18,7 @@ struct DealRowView: View {
                 } placeholder: {
                     ProgressView()
                 }
-                .frame(width: 60, height: 60)
+                .frame(width: 80, height: 80)
                 .cornerRadius(10)
             }
 
@@ -27,6 +27,11 @@ struct DealRowView: View {
                     .bold()
                 Text(.init(Utils.shared.formatMarkdown(text: deal.descriptionPreview)))
                     .font(.caption)
+                    .lineLimit(2)
+                Text("Posted by \(deal.editor)")
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
+                    .padding(.vertical, 2)
             }
 
             Spacer()

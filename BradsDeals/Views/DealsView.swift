@@ -12,7 +12,6 @@ struct DealsView: View {
     var body: some View {
         ForEach(deals, id: \.id) { deal in
             DealRowView(deal: deal)
-                .frame(height: 90)
         }
     }
 }
