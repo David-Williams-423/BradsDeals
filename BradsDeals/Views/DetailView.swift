@@ -27,26 +27,18 @@ struct DetailView: View {
                 
                 VStack(alignment: .leading) {
                     Text(deal.headline)
-                        .font(.largeTitle)
+                        .font(.title2)
                         .bold()
                         
                     Text("Posted by \(deal.editor)")
-                        .font(.title2)
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                                                            
+                    Text(deal.primaryCategory.name)
+                        .font(.subheadline)
                         .foregroundStyle(.secondary)
                     
-                    Text(deal.details)
-                    
-                    HStack {
-                        ForEach(deal.categories, id: \.name) { category in
-                        
-                            Text(category.name)
-                            Text("|")
-                        }
-                        .foregroundColor(.secondary)
-                    }
-                    
                     Text(.init(Utils.shared.formatMarkdown(text: deal.description)))
-                        .font(.title2)
                 }
                 .padding()
             }
